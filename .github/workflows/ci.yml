@@ -68,6 +68,6 @@ jobs:
       - name: Verify clean installation
         run: |
           python -m venv wheel-check
-          wheel-check/bin/python -m pip install --no-deps dist/*.whl
+          wheel-check/bin/python -m pip install dist/*.whl
           wheel-check/bin/cassandra-r3v --version
           wheel-check/bin/cassandra-r3v --help
