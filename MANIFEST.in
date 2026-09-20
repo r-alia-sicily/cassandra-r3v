@@ -1,0 +1,3 @@
+include README.md CHANGELOG.md CITATION.cff CONTRIBUTING.md LICENSE SECURITY.md requirements.txt
+recursive-include docs *.md *.txt *.tex *.pdf *.png
+recursive-include examples *.json

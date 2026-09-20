@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use Cassandra R3v, please cite this software release; cite the associated article when applicable."
+title: "Cassandra R3v"
+type: software
+version: 1.0.0
+date-released: 2026-09-20
+authors:
+  - family-names: "Alia"
+    given-names: "Rosario"
+license: GPL-3.0-or-later
+repository-code: "https://github.com/r-alia-sicily/cassandra-r3v"
+abstract: >-
+  An intrinsically interpretable, evidence-controlled Rul3volution
+  implementation for Remaining Useful Life prognostics on NASA C-MAPSS.
+keywords:
+  - remaining useful life
+  - interpretable machine learning
+  - fuzzy systems
+  - Takagi-Sugeno
+  - prognostics
+  - NASA C-MAPSS

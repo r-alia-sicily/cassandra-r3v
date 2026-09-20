@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cassandra-r3v"
+version = "1.0.0"
+description = "Interpretable Rul3volution implementation for NASA C-MAPSS RUL prognostics"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "GPL-3.0-or-later"}
+authors = [{name = "Rosario Alia"}]
+keywords = ["RUL", "prognostics", "fuzzy systems", "interpretable machine learning", "C-MAPSS"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/r-alia-sicily/cassandra-r3v"
+Repository = "https://github.com/r-alia-sicily/cassandra-r3v"
+Issues = "https://github.com/r-alia-sicily/cassandra-r3v/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+cassandra-r3v = "cassandra_r3v.cli:main"
+cassandra-r3v-gui = "cassandra_r3v.gui.app:launch"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"cassandra_r3v.resources" = ["*.md"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

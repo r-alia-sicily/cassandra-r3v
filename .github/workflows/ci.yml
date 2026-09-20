@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install .
+
+      - name: Run source suite
+        run: python -m unittest discover -s tests -v
+
+      - name: Compile package
+        run: python -m compileall -q src
+
+      - name: Check command-line interface
+        run: |
+          cassandra-r3v --version
+          cassandra-r3v --help
+          cassandra-r3v autostructure --help
+          cassandra-r3v full-test --help
+
+  package:
+    name: Build and install wheel
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Build wheel
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip wheel . --no-deps --wheel-dir dist
+
+      - name: Verify clean installation
+        run: |
+          python -m venv wheel-check
+          wheel-check/bin/python -m pip install --no-deps dist/*.whl
+          wheel-check/bin/cassandra-r3v --version
+          wheel-check/bin/cassandra-r3v --help

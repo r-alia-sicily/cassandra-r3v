@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "application": "Cassandra R3v",
+  "release": "1.0.0",
+  "description": "Canonical experiment profile for the Cassandra R3v article.",
+  "subsets": ["FD001", "FD002", "FD003", "FD004"],
+  "protocols": ["uncapped", "cap125"],
+  "training": {
+    "loss": "nasa",
+    "authority_mode": "learned",
+    "epochs": 250,
+    "learning_rate_consequents": 0.025,
+    "learning_rate_authorities": 0.025,
+    "ridge_lambda": 0.9,
+    "authority_l2": 0.0,
+    "gradient_clip": 10.0,
+    "patience": 50,
+    "min_delta": 1e-8,
+    "seed": 7,
+    "pseudo_endpoint_fractions": [0.35, 0.50, 0.65, 0.80, 0.92],
+    "denominator_epsilon": 1e-12
+  },
+  "autostructure": {
+    "min_support": 0.01,
+    "activation_support_cutoff": 0.01,
+    "min_novelty": 0.005,
+    "min_relative_improvement": 0.01,
+    "folds": 3,
+    "seeds": [7, 42, 99],
+    "consensus_required": 2,
+    "max_order": 3,
+    "screen_top_k": 24,
+    "prune_relative_authority": 0.002,
+    "parent_relative_authority": 0.0002,
+    "validation_epochs": 100,
+    "budget": {
+      "max_seconds": 3600.0,
+      "max_candidates": 10000,
+      "max_validations_per_seed": 4,
+      "max_rounds": 3
+    }
+  }
+}

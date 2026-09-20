@@ -1,0 +1,246 @@
+CASSANDRA R3V — FULL TEST REPORT
+=======================================
+Application version: 1.0.0
+Started (UTC): 2026-09-16T17:00:54+00:00
+Finished (UTC): 2026-09-16T17:00:58+00:00
+Workspace: canonical_v1_0_0_final
+Selected subsets: FD001, FD002, FD003, FD004
+Selected protocols: uncapped, cap125
+Protocol rule: uncapped and cap125 are tested and reported separately.
+Smoke-test metrics are software diagnostics, not publication results.
+
+OVERALL STATUS: PASS
+SUMMARY: PASS=88 · WARN=0 · SKIP=0 · FAIL=0
+
+==== RUNTIME AND DEPENDENCIES ====
+[PASS] Python runtime: 3.12.14 · CPython · x86_64
+[PASS] Operating system: Linux-6.18.44-x86_64-with-glibc2.39
+[PASS] numpy dependency: version 2.3.5; required >= 1.24
+[PASS] pandas dependency: version 2.2.3; required >= 2.0
+[PASS] Tkinter dependency: Tk 9.0
+
+==== APPLICATION AND SOURCE INTEGRITY ====
+[PASS] Python source compilation: 23 package modules compiled
+[PASS] Packaged help resources: GUI guide and method alignment are present
+[PASS] Version consistency: package=1.0.0; pyproject=1.0.0; citation=1.0.0
+
+==== BUILT-IN NUMERICAL SELF-TEST ====
+[PASS] Core numerical contracts: partition error=0.000e+00; responsibilities normalized; model round trip exact
+
+==== AUTOMATED SOURCE TEST SUITE ====
+    test_budget_recommendations_are_actionable (test_autostructure.AutoStructureTests.test_budget_recommendations_are_actionable) ... ok
+    test_full24_pair_count (test_autostructure.AutoStructureTests.test_full24_pair_count) ... ok
+    test_higher_order_composition (test_autostructure.AutoStructureTests.test_higher_order_composition) ... ok
+    test_pairwise_generator_excludes_same_variable (test_autostructure.AutoStructureTests.test_pairwise_generator_excludes_same_variable) ... ok
+    test_repeated_variable_composition_is_rejected (test_autostructure.AutoStructureTests.test_repeated_variable_composition_is_rejected) ... ok
+    test_bootstrap_is_reproducible (test_comparison.PairedComparisonTests.test_bootstrap_is_reproducible) ... ok
+    test_cancelled_comparison_stops_before_work (test_comparison.PairedComparisonTests.test_cancelled_comparison_stops_before_work) ... ok
+    test_full_test_reports_the_paired_comparison (test_comparison.PairedComparisonTests.test_full_test_reports_the_paired_comparison) ... ok
+    test_identical_models_report_exact_no_change (test_comparison.PairedComparisonTests.test_identical_models_report_exact_no_change) ... ok
+    test_uniformly_better_final_model_is_supported (test_comparison.PairedComparisonTests.test_uniformly_better_final_model_is_supported) ... ok
+    test_bad_loss_rejected (test_core.ConfigurationTests.test_bad_loss_rejected) ... ok
+    test_empty_protocol_rejected (test_core.ConfigurationTests.test_empty_protocol_rejected) ... ok
+    test_parent_threshold_must_be_lower (test_core.ConfigurationTests.test_parent_threshold_must_be_lower) ... ok
+    test_protocol_order_is_canonical (test_core.ConfigurationTests.test_protocol_order_is_canonical) ... ok
+    test_subset_normalization (test_core.ConfigurationTests.test_subset_normalization) ... ok
+    test_constant_feature_is_non_degenerate (test_core.FuzzyTests.test_constant_feature_is_non_degenerate) ... ok
+    test_extreme_shoulders_cover_domain (test_core.FuzzyTests.test_extreme_shoulders_cover_domain) ... ok
+    test_non_finite_has_zero_membership (test_core.FuzzyTests.test_non_finite_has_zero_membership) ... ok
+    test_partition_of_unity (test_core.FuzzyTests.test_partition_of_unity) ... ok
+    test_vocabulary_round_trip (test_core.FuzzyTests.test_vocabulary_round_trip) ... ok
+    test_gradient_direction (test_core.LossTests.test_gradient_direction) ... ok
+    test_nasa_gradient_matches_finite_difference (test_core.LossTests.test_nasa_gradient_matches_finite_difference) ... ok
+    test_overestimation_is_penalized_more (test_core.LossTests.test_overestimation_is_penalized_more) ... ok
+    test_zero_error_has_zero_penalty (test_core.LossTests.test_zero_error_has_zero_penalty) ... ok
+    test_k90_one_hot (test_core.MetricTests.test_k90_one_hot) ... ok
+    test_regression_metrics (test_core.MetricTests.test_regression_metrics) ... ok
+    test_authority_common_shift_is_invariant (test_core.RuleAndModelTests.test_authority_common_shift_is_invariant) ... ok
+    test_cancelled_fit_stops_at_checkpoint (test_core.RuleAndModelTests.test_cancelled_fit_stops_at_checkpoint) ... ok
+    test_composition_is_canonical (test_core.RuleAndModelTests.test_composition_is_canonical) ... ok
+    test_explanation_reconstructs_prediction (test_core.RuleAndModelTests.test_explanation_reconstructs_prediction) ... ok
+    test_fit_and_model_round_trip (test_core.RuleAndModelTests.test_fit_and_model_round_trip) ... ok
+    test_prediction_respects_consequent_bounds (test_core.RuleAndModelTests.test_prediction_respects_consequent_bounds) ... ok
+    test_responsibilities_sum_to_one (test_core.RuleAndModelTests.test_responsibilities_sum_to_one) ... ok
+    test_rule_rejects_repeated_feature (test_core.RuleAndModelTests.test_rule_rejects_repeated_feature) ... ok
+    test_unary_activations_cover_each_sample (test_core.RuleAndModelTests.test_unary_activations_cover_each_sample) ... ok
+    test_downstream_invalidation_is_recoverable (test_data.PreparedRoundTripTests.test_downstream_invalidation_is_recoverable) ... ok
+    test_npz_round_trip (test_data.PreparedRoundTripTests.test_npz_round_trip) ... ok
+    test_nested_nasa_archive_import (test_data.RepositoryTests.test_nested_nasa_archive_import) ... ok
+    test_unrecognized_archive_rejected (test_data.RepositoryTests.test_unrecognized_archive_rejected) ... ok
+    test_cap125 (test_data.TargetTests.test_cap125) ... ok
+    test_five_pseudo_endpoints_per_engine (test_data.TargetTests.test_five_pseudo_endpoints_per_engine) ... ok
+    test_test_rul_expands_backwards_from_endpoint (test_data.TargetTests.test_test_rul_expands_backwards_from_endpoint) ... ok
+    test_train_rul_ends_at_zero (test_data.TargetTests.test_train_rul_ends_at_zero) ... ok
+    test_uncapped_is_unchanged (test_data.TargetTests.test_uncapped_is_unchanged) ... ok
+    test_cancelled_full_test_saves_partial_report (test_diagnostics.DiagnosticUtilityTests.test_cancelled_full_test_saves_partial_report) ... ok
+    test_canonical_cassandra_banner_is_stable_and_readable (test_diagnostics.DiagnosticUtilityTests.test_canonical_cassandra_banner_is_stable_and_readable) ... ok
+    test_full_test_saves_report_without_nasa_data (test_diagnostics.DiagnosticUtilityTests.test_full_test_saves_report_without_nasa_data) ... ok
+    test_gui_exposes_sixth_full_test_tab_in_english (test_diagnostics.DiagnosticUtilityTests.test_gui_exposes_sixth_full_test_tab_in_english) ... ok
+    test_report_status_reflects_failures (test_diagnostics.DiagnosticUtilityTests.test_report_status_reflects_failures) ... ok
+    test_version_tuple_ignores_non_numeric_suffixes (test_diagnostics.DiagnosticUtilityTests.test_version_tuple_ignores_non_numeric_suffixes) ... ok
+    test_article_profile_matches_code_defaults (test_release_contract.ReleaseContractTests.test_article_profile_matches_code_defaults) ... ok
+    test_github_publication_files_are_present (test_release_contract.ReleaseContractTests.test_github_publication_files_are_present) ... ok
+    test_headless_autostructure_is_exposed (test_release_contract.ReleaseContractTests.test_headless_autostructure_is_exposed) ... ok
+    test_packaged_method_document_matches_repository (test_release_contract.ReleaseContractTests.test_packaged_method_document_matches_repository) ... ok
+    test_public_material_has_one_release_identity (test_release_contract.ReleaseContractTests.test_public_material_has_one_release_identity) ... ok
+
+    ----------------------------------------------------------------------
+    Ran 55 tests in 0.155s
+
+    OK
+[PASS] Source test suite: 55 run; 0 failures; 0 errors; 0 skipped
+
+==== NASA C-MAPSS RAW DATA AUDIT ====
+[PASS] FD001 raw data: TRAIN rows=20,631; TEST rows=13,096; TRAIN engines=100; TEST engines=100
+    SHA-256 train_FD001.txt: 963b5e22825b34d8b21c69e1aeb4af3e647050eb672ee8834ba4b5d91d2de0f8
+    SHA-256 test_FD001.txt: 3cda7109ce17bafb5443f2ac926cfcf88154b941b8c4cf95eb55d1ddd6f52851
+    SHA-256 RUL_FD001.txt: a19c8ec94931949d0485bdc35118206e9c81c4547b422efb9cf86f4ceddbceca
+[PASS] FD002 raw data: TRAIN rows=53,759; TEST rows=33,991; TRAIN engines=260; TEST engines=259
+    SHA-256 train_FD002.txt: dac6c4dbc4e7c1bdeb5747da3d313d05c395bb99801b44a002b26a2ba13d788f
+    SHA-256 test_FD002.txt: de7b5bf7e998a985c378488480528b7c02cff1406a46740def362dda8d9b4e02
+    SHA-256 RUL_FD002.txt: c851dd96a6ea6998d3c4a8f834d3c8013aa90e93a6ed950dc826ad0655b2906b
+[PASS] FD003 raw data: TRAIN rows=24,720; TEST rows=16,596; TRAIN engines=100; TEST engines=100
+    SHA-256 train_FD003.txt: 2abbe9968cc5e8eb091980f51b20f62bb4127336d3482cb52071d53bf23329e2
+    SHA-256 test_FD003.txt: 299babd63c8d987cef079c4a425429f33b3a34797d803bbe2ad48c29dbd0d790
+    SHA-256 RUL_FD003.txt: df1e0566306b174a2de41c67a3e7a51877889598b78643fc3e5685259091b7cb
+[PASS] FD004 raw data: TRAIN rows=61,249; TEST rows=41,214; TRAIN engines=249; TEST engines=248
+    SHA-256 train_FD004.txt: 27ef6160b6a1dcb2613a88de9c239f763b223f02cdc41dc5cdedc5dc189b6218
+    SHA-256 test_FD004.txt: 1dc675fff0624bac10786927c6715b37d1297657137400d2b1a3138d777a3ba5
+    SHA-256 RUL_FD004.txt: 196b836b85a95ac7fdbbf29c5fdf1657382eafa445644d114ffaaf50dc2975e1
+[PASS] Selected raw-data inventory: 12/12 expected files present
+
+==== NON-DESTRUCTIVE PREPARATION CHECK ====
+[PASS] Prepare FD001/uncapped: TRAIN rows=20,631; pseudo-endpoints=500; TEST engines=100; features=24
+[PASS] Prepare FD001/cap125: TRAIN rows=20,631; pseudo-endpoints=500; TEST engines=100; features=24
+[PASS] Prepare FD002/uncapped: TRAIN rows=53,759; pseudo-endpoints=1,300; TEST engines=259; features=24
+[PASS] Prepare FD002/cap125: TRAIN rows=53,759; pseudo-endpoints=1,300; TEST engines=259; features=24
+[PASS] Prepare FD003/uncapped: TRAIN rows=24,720; pseudo-endpoints=500; TEST engines=100; features=24
+[PASS] Prepare FD003/cap125: TRAIN rows=24,720; pseudo-endpoints=500; TEST engines=100; features=24
+[PASS] Prepare FD004/uncapped: TRAIN rows=61,249; pseudo-endpoints=1,245; TEST engines=248; features=24
+[PASS] Prepare FD004/cap125: TRAIN rows=61,249; pseudo-endpoints=1,245; TEST engines=248; features=24
+
+==== SAVED ARTIFACT AUDIT ====
+[PASS] Prepared artifact FD001/uncapped: TRAIN rows=20,631; pseudo-endpoints=500; TEST engines=100; features=24
+[PASS] Model artifact FD001/uncapped: rules=120; interactions=0; loss=nasa; seed=7; configured epochs=250; ridge=0.9
+    Training: completed epochs=250; best epoch=250; best objective=515.195612; stopped early=False.
+[PASS] Backbone artifact FD001/uncapped: rules=120; interactions=0; seed=7
+    Backbone training: completed epochs=250; best epoch=250; best objective=515.195612.
+[PASS] Structure artifact FD001/uncapped: rules=120->120; accepted=0; generated=3787; shortlisted=24; validated=4; pruning proposals=92; elapsed=3.081s; stop=no validated shortlisted candidate reached the required consensus
+    Round 1: order=2; generated=3787; shortlisted=24; validated=4; decision=stop: validation consensus insufficient.
+[PASS] Evaluation artifact FD001/uncapped: n=100; rules=120; interactions=0; NASA=747.763; MAE=16.243; RMSE=20.561; R2=0.755200; bias=-4.023; overestimation=41.00%
+    Responsibility: median k90=6.000; mean k90=6.440; median max beta=0.343386; median normalized entropy=0.405024.
+[PASS] Comparison artifact FD001/uncapped: rules=120->120; NASA=747.763->747.763; gain=+0.000%; 95% interval=[+0.000%, +0.000%]; conclusion=no_change
+[PASS] Prepared artifact FD001/cap125: TRAIN rows=20,631; pseudo-endpoints=500; TEST engines=100; features=24
+[PASS] Model artifact FD001/cap125: rules=120; interactions=0; loss=nasa; seed=7; configured epochs=250; ridge=0.9
+    Training: completed epochs=250; best epoch=250; best objective=389.150064; stopped early=False.
+[PASS] Backbone artifact FD001/cap125: rules=120; interactions=0; seed=7
+    Backbone training: completed epochs=250; best epoch=250; best objective=389.150064.
+[PASS] Structure artifact FD001/cap125: rules=120->120; accepted=0; generated=6335; shortlisted=24; validated=4; pruning proposals=57; elapsed=3.078s; stop=no validated shortlisted candidate reached the required consensus
+    Round 1: order=2; generated=6335; shortlisted=24; validated=4; decision=stop: validation consensus insufficient.
+[PASS] Evaluation artifact FD001/cap125: n=100; rules=120; interactions=0; NASA=510.572; MAE=16.156; RMSE=19.807; R2=0.755690; bias=-7.778; overestimation=34.00%
+    Responsibility: median k90=13.000; mean k90=12.830; median max beta=0.264688; median normalized entropy=0.513402.
+[PASS] Comparison artifact FD001/cap125: rules=120->120; NASA=510.572->510.572; gain=+0.000%; 95% interval=[+0.000%, +0.000%]; conclusion=no_change
+[PASS] Prepared artifact FD002/uncapped: TRAIN rows=53,759; pseudo-endpoints=1,300; TEST engines=259; features=24
+[PASS] Model artifact FD002/uncapped: rules=120; interactions=0; loss=nasa; seed=7; configured epochs=250; ridge=0.9
+    Training: completed epochs=250; best epoch=250; best objective=711.169526; stopped early=False.
+[PASS] Backbone artifact FD002/uncapped: rules=120; interactions=0; seed=7
+    Backbone training: completed epochs=250; best epoch=250; best objective=711.169526.
+[PASS] Structure artifact FD002/uncapped: rules=120->120; accepted=0; generated=1484; shortlisted=24; validated=4; pruning proposals=89; elapsed=6.068s; stop=no validated shortlisted candidate reached the required consensus
+    Round 1: order=2; generated=1484; shortlisted=24; validated=4; decision=stop: validation consensus insufficient.
+[PASS] Evaluation artifact FD002/uncapped: n=259; rules=120; interactions=0; NASA=316899.106; MAE=33.440; RMSE=42.377; R2=0.379084; bias=-1.025; overestimation=53.28%
+    Responsibility: median k90=5.000; mean k90=5.432; median max beta=0.395884; median normalized entropy=0.355372.
+[PASS] Comparison artifact FD002/uncapped: rules=120->120; NASA=316899.106->316899.106; gain=+0.000%; 95% interval=[+0.000%, +0.000%]; conclusion=no_change
+[PASS] Prepared artifact FD002/cap125: TRAIN rows=53,759; pseudo-endpoints=1,300; TEST engines=259; features=24
+[PASS] Model artifact FD002/cap125: rules=120; interactions=0; loss=nasa; seed=7; configured epochs=250; ridge=0.9
+    Training: completed epochs=250; best epoch=250; best objective=202.556196; stopped early=False.
+[PASS] Backbone artifact FD002/cap125: rules=120; interactions=0; seed=7
+    Backbone training: completed epochs=250; best epoch=250; best objective=202.556196.
+[PASS] Structure artifact FD002/cap125: rules=120->120; accepted=0; generated=4786; shortlisted=24; validated=4; pruning proposals=89; elapsed=6.231s; stop=no validated shortlisted candidate reached the required consensus
+    Round 1: order=2; generated=4786; shortlisted=24; validated=4; decision=stop: validation consensus insufficient.
+[PASS] Evaluation artifact FD002/cap125: n=259; rules=120; interactions=0; NASA=6699.852; MAE=27.763; RMSE=32.769; R2=0.417593; bias=-11.142; overestimation=40.15%
+    Responsibility: median k90=8.000; mean k90=8.869; median max beta=0.358356; median normalized entropy=0.422356.
+[PASS] Comparison artifact FD002/cap125: rules=120->120; NASA=6699.852->6699.852; gain=+0.000%; 95% interval=[+0.000%, +0.000%]; conclusion=no_change
+[PASS] Prepared artifact FD003/uncapped: TRAIN rows=24,720; pseudo-endpoints=500; TEST engines=100; features=24
+[PASS] Model artifact FD003/uncapped: rules=120; interactions=0; loss=nasa; seed=7; configured epochs=250; ridge=0.9
+    Training: completed epochs=250; best epoch=250; best objective=1558.16874; stopped early=False.
+[PASS] Backbone artifact FD003/uncapped: rules=120; interactions=0; seed=7
+    Backbone training: completed epochs=250; best epoch=250; best objective=1558.16874.
+[PASS] Structure artifact FD003/uncapped: rules=120->120; accepted=0; generated=220; shortlisted=24; validated=4; pruning proposals=104; elapsed=3.043s; stop=no validated shortlisted candidate reached the required consensus
+    Round 1: order=2; generated=220; shortlisted=24; validated=4; decision=stop: validation consensus insufficient.
+[PASS] Evaluation artifact FD003/uncapped: n=100; rules=120; interactions=0; NASA=335706.067; MAE=24.822; RMSE=33.361; R2=0.350498; bias=9.602; overestimation=60.00%
+    Responsibility: median k90=4.000; mean k90=3.770; median max beta=0.473786; median normalized entropy=0.279496.
+[PASS] Comparison artifact FD003/uncapped: rules=120->120; NASA=335706.067->335706.067; gain=+0.000%; 95% interval=[+0.000%, +0.000%]; conclusion=no_change
+[PASS] Prepared artifact FD003/cap125: TRAIN rows=24,720; pseudo-endpoints=500; TEST engines=100; features=24
+[PASS] Model artifact FD003/cap125: rules=121; interactions=1; loss=nasa; seed=7; configured epochs=250; ridge=0.9
+    Training: completed epochs=250; best epoch=250; best objective=439.824688; stopped early=False.
+[PASS] Backbone artifact FD003/cap125: rules=120; interactions=0; seed=7
+    Backbone training: completed epochs=250; best epoch=250; best objective=443.421991.
+[PASS] Structure artifact FD003/cap125: rules=120->121; accepted=1; generated=5575; shortlisted=48; validated=8; pruning proposals=92; elapsed=6.324s; stop=no validated shortlisted candidate reached the required consensus
+    Accepted rule: OS1_Altitude IS LOW AND S20_W31_HPTCoolantBleed IS LOW
+    Round 1: order=2; generated=5481; shortlisted=24; validated=4; decision=accepted: OS1_Altitude IS LOW AND S20_W31_HPTCoolantBleed IS LOW.
+    Round 2: order=3; generated=94; shortlisted=24; validated=4; decision=stop: validation consensus insufficient.
+[PASS] Evaluation artifact FD003/cap125: n=100; rules=121; interactions=1; NASA=823.922; MAE=16.757; RMSE=20.424; R2=0.728054; bias=-1.003; overestimation=49.00%
+    Responsibility: median k90=11.500; mean k90=12.460; median max beta=0.286547; median normalized entropy=0.498004.
+[PASS] Comparison artifact FD003/cap125: rules=120->121; NASA=855.452->823.922; gain=+3.686%; 95% interval=[-7.676%, +9.488%]; conclusion=inconclusive
+[PASS] Prepared artifact FD004/uncapped: TRAIN rows=61,249; pseudo-endpoints=1,245; TEST engines=248; features=24
+[PASS] Model artifact FD004/uncapped: rules=120; interactions=0; loss=nasa; seed=7; configured epochs=250; ridge=0.9
+    Training: completed epochs=250; best epoch=250; best objective=2171.71714; stopped early=False.
+[PASS] Backbone artifact FD004/uncapped: rules=120; interactions=0; seed=7
+    Backbone training: completed epochs=250; best epoch=250; best objective=2171.71714.
+[PASS] Structure artifact FD004/uncapped: rules=120->120; accepted=0; generated=557; shortlisted=24; validated=4; pruning proposals=102; elapsed=6.157s; stop=no validated shortlisted candidate reached the required consensus
+    Round 1: order=2; generated=557; shortlisted=24; validated=4; decision=stop: validation consensus insufficient.
+[PASS] Evaluation artifact FD004/uncapped: n=248; rules=120; interactions=0; NASA=161796.562; MAE=39.549; RMSE=47.071; R2=0.254698; bias=16.362; overestimation=65.73%
+    Responsibility: median k90=5.000; mean k90=4.593; median max beta=0.415720; median normalized entropy=0.334946.
+[PASS] Comparison artifact FD004/uncapped: rules=120->120; NASA=161796.562->161796.562; gain=+0.000%; 95% interval=[+0.000%, +0.000%]; conclusion=no_change
+[PASS] Prepared artifact FD004/cap125: TRAIN rows=61,249; pseudo-endpoints=1,245; TEST engines=248; features=24
+[PASS] Model artifact FD004/cap125: rules=120; interactions=0; loss=nasa; seed=7; configured epochs=250; ridge=0.9
+    Training: completed epochs=250; best epoch=250; best objective=235.759838; stopped early=False.
+[PASS] Backbone artifact FD004/cap125: rules=120; interactions=0; seed=7
+    Backbone training: completed epochs=250; best epoch=250; best objective=235.759838.
+[PASS] Structure artifact FD004/cap125: rules=120->120; accepted=0; generated=6558; shortlisted=24; validated=4; pruning proposals=81; elapsed=6.232s; stop=no validated shortlisted candidate reached the required consensus
+    Round 1: order=2; generated=6558; shortlisted=24; validated=4; decision=stop: validation consensus insufficient.
+[PASS] Evaluation artifact FD004/cap125: n=248; rules=120; interactions=0; NASA=7388.818; MAE=29.522; RMSE=33.710; R2=0.384885; bias=-7.893; overestimation=41.53%
+    Responsibility: median k90=11.000; mean k90=12.512; median max beta=0.361919; median normalized entropy=0.456828.
+[PASS] Comparison artifact FD004/cap125: rules=120->120; NASA=7388.818->7388.818; gain=+0.000%; 95% interval=[+0.000%, +0.000%]; conclusion=no_change
+
+==== PAIRED BACKBONE–AUTOSTRUCTURE TEST COMPARISON ====
+    PASS in this section means that the paired comparison ran correctly; it does not by itself mean that AutoStructure improved predictive performance. Rule selection remains TRAIN-only.
+[PASS] Paired comparison FD001/uncapped: rules=120->120; NASA=747.763->747.763; gain=+0.000%; 95% interval=[+0.000%, +0.000%]; conclusion=no_change
+    Paired engines: 0 lower, 100 equal, 0 higher NASA penalty; favorable bootstrap resamples=0.00%.
+    Structure difference: added=0; removed=0.
+[PASS] Paired comparison FD001/cap125: rules=120->120; NASA=510.572->510.572; gain=+0.000%; 95% interval=[+0.000%, +0.000%]; conclusion=no_change
+    Paired engines: 0 lower, 100 equal, 0 higher NASA penalty; favorable bootstrap resamples=0.00%.
+    Structure difference: added=0; removed=0.
+[PASS] Paired comparison FD002/uncapped: rules=120->120; NASA=316899.106->316899.106; gain=+0.000%; 95% interval=[+0.000%, +0.000%]; conclusion=no_change
+    Paired engines: 0 lower, 259 equal, 0 higher NASA penalty; favorable bootstrap resamples=0.00%.
+    Structure difference: added=0; removed=0.
+[PASS] Paired comparison FD002/cap125: rules=120->120; NASA=6699.852->6699.852; gain=+0.000%; 95% interval=[+0.000%, +0.000%]; conclusion=no_change
+    Paired engines: 0 lower, 259 equal, 0 higher NASA penalty; favorable bootstrap resamples=0.00%.
+    Structure difference: added=0; removed=0.
+[PASS] Paired comparison FD003/uncapped: rules=120->120; NASA=335706.067->335706.067; gain=+0.000%; 95% interval=[+0.000%, +0.000%]; conclusion=no_change
+    Paired engines: 0 lower, 100 equal, 0 higher NASA penalty; favorable bootstrap resamples=0.00%.
+    Structure difference: added=0; removed=0.
+[PASS] Paired comparison FD003/cap125: rules=120->121; NASA=855.452->823.922; gain=+3.686%; 95% interval=[-7.676%, +9.488%]; conclusion=inconclusive
+    Paired engines: 39 lower, 0 equal, 61 higher NASA penalty; favorable bootstrap resamples=77.76%.
+    Structure difference: added=1; removed=0.
+    Added rule: OS1_Altitude IS LOW AND S20_W31_HPTCoolantBleed IS LOW
+[PASS] Paired comparison FD004/uncapped: rules=120->120; NASA=161796.562->161796.562; gain=+0.000%; 95% interval=[+0.000%, +0.000%]; conclusion=no_change
+    Paired engines: 0 lower, 248 equal, 0 higher NASA penalty; favorable bootstrap resamples=0.00%.
+    Structure difference: added=0; removed=0.
+[PASS] Paired comparison FD004/cap125: rules=120->120; NASA=7388.818->7388.818; gain=+0.000%; 95% interval=[+0.000%, +0.000%]; conclusion=no_change
+    Paired engines: 0 lower, 248 equal, 0 higher NASA penalty; favorable bootstrap resamples=0.00%.
+    Structure difference: added=0; removed=0.
+
+==== REAL-DATA PIPELINE SMOKE TEST ====
+[PASS] Pipeline FD001/uncapped: 24 features; 120 rules; 2 diagnostic epochs; NASA=1253.230; MAE=23.374; RMSE=26.522
+[PASS] Pipeline FD001/cap125: 24 features; 120 rules; 2 diagnostic epochs; NASA=1070.508; MAE=23.630; RMSE=26.338
+[PASS] Pipeline FD002/uncapped: 24 features; 120 rules; 2 diagnostic epochs; NASA=94759.238; MAE=41.158; RMSE=49.174
+[PASS] Pipeline FD002/cap125: 24 features; 120 rules; 2 diagnostic epochs; NASA=15099.243; MAE=35.912; RMSE=40.020
+[PASS] Pipeline FD003/uncapped: 24 features; 120 rules; 2 diagnostic epochs; NASA=5151.766; MAE=23.235; RMSE=28.162
+[PASS] Pipeline FD003/cap125: 24 features; 120 rules; 2 diagnostic epochs; NASA=1207.433; MAE=21.240; RMSE=24.595
+[PASS] Pipeline FD004/uncapped: 24 features; 120 rules; 2 diagnostic epochs; NASA=88866.572; MAE=42.191; RMSE=49.845
+[PASS] Pipeline FD004/cap125: 24 features; 120 rules; 2 diagnostic epochs; NASA=20910.172; MAE=35.852; RMSE=40.070
+[PASS] AutoStructure smoke path: FD001/uncapped; generated=25; stop=no validated shortlisted candidate reached the required consensus
+
+==== END OF REPORT ====
+Send this complete TXT file when requesting development diagnostics.

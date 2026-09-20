@@ -1,0 +1,47 @@
+name: Bug report
+description: Report a reproducible Cassandra defect
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a problem. Do not attach NASA data, credentials, or private research artifacts.
+  - type: input
+    id: version
+    attributes:
+      label: Cassandra version
+      placeholder: "1.0.0 and commit SHA"
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Platform
+      placeholder: "Operating system, Python version, architecture"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Include the exact command or GUI sequence and non-sensitive configuration.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: Paste the relevant error and Full Test summary, or attach a sanitized report.
