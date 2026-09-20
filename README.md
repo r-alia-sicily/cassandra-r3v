@@ -4,6 +4,10 @@
 
 **Repository:** https://github.com/r-alia-sicily/cassandra-r3v
 
+**DOI for version 1.0.0:** https://doi.org/10.5281/zenodo.22852441
+
+**DOI for all versions:** https://doi.org/10.5281/zenodo.22852440
+
 Cassandra is a transparent implementation of **Rul3volution (R3v)** for Remaining Useful Life (RUL) estimation on NASA C-MAPSS. It combines a normalized zero-order Takagi–Sugeno engine, readable fuzzy rules, evidence-controlled structural growth, faithful local decompositions, and a desktop workflow for the four C-MAPSS subsets.
 
 **Cassandra R3v 1.0.0 is a public reference implementation of the R3v method.** Results attributed specifically to this release should be generated with the tagged `v1.0.0` source, the declared experiment profile, and archived machine-readable outputs.

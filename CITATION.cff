@@ -3,10 +3,12 @@ message: "If you use Cassandra R3v, please cite this software release; cite the 
 title: "Cassandra R3v"
 type: software
 version: 1.0.0
+doi: "10.5281/zenodo.22852441"
 date-released: 2026-09-20
 authors:
   - family-names: "Alia"
     given-names: "Rosario"
+    orcid: "https://orcid.org/0009-0007-4497-3858"
 license: GPL-3.0-or-later
 repository-code: "https://github.com/r-alia-sicily/cassandra-r3v"
 abstract: >-
